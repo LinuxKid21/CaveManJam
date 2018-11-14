@@ -71,7 +71,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[node name="CaveMan" type="KinematicBody2D" index="0"]
+[node name="CaveMan" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -89,8 +89,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="sprite" type="AnimatedSprite" parent="." index="1"]
 
+z_index = -1
 frames = SubResource( 2 )
 animation = "walk"
 frame = 5
+_sections_unfolded = [ "Z Index" ]
 
 

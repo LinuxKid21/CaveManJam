@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameElements/HealthBar.gd" type="Script" id=1]
+
+[node name="HealthBar" type="Polygon2D"]
+
+polygon = PoolVector2Array( 10, -1, 10, 1, -10, 1, -10, -1 )
+uv = PoolVector2Array(  )
+color = Color( 0.136719, 0.136719, 0.136719, 0.480667 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="health" type="Polygon2D" parent="." index="0"]
+
+polygon = PoolVector2Array( -9.5, -0.75, -9.5, 0.75, 9.5, 0.75, 9.5, -0.75 )
+uv = PoolVector2Array(  )
+color = Color( 0, 1, 0.0390625, 0.613255 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Invert", "Transform" ]
+
+

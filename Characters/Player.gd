@@ -9,8 +9,6 @@ export var gravitySpeed = 9.8*64
 var velocity = Vector2(0,0)
 var facing_right = false
 
-var crosshair_img = load("res://assets/Crosshair.png")
-
 var time_idle = 0.0
 var time_in_state = 0.0
 
@@ -35,7 +33,13 @@ func _process(delta):
 
 func _physics_process(delta):
 	velocity.y += delta * gravitySpeed
-	velocity.x = 0;
+	
+	if(abs(velocity.x) < 1*delta):
+		velocity.x = 0;
+	elif(velocity.x > 0):
+		velocity.x -= 1500 * delta
+	elif(velocity.x < 0):
+		velocity.x += 1500 * delta
 
 	if(anim != 'shoot' and anim != 'jump'):
 		anim = 'idle'
@@ -66,6 +70,9 @@ func _physics_process(delta):
 			bullet.position = position + Vector2(10 * (1 if facing_right else -1),-20)
 			if(not facing_right):
 				bullet.speed *= -1
+				velocity.x += 750
+			else:
+				velocity.x -= 750
 			get_parent().add_child(bullet)
 		
 		if(not is_on_floor() and anim != 'shoot'):

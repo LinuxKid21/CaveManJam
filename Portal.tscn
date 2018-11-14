@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Portal.gd" type="Script" id=1]
+[ext_resource path="res://assets/Portal_idle/portal_0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Portal_idle/portal_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Portal_idle/portal_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Portal_idle/portal_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Portal_idle/portal_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/Portal_idle/portal_5.png" type="Texture" id=7]
+[ext_resource path="res://assets/Portal_idle/portal_6.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14, 48 )
+
+[node name="Portal" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="portal" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 3.59375, 3.59375 )
+z_index = -2
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 9 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+

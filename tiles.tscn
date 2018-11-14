@@ -1,195 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/tile_top_left.png" type="Texture" id=1]
-[ext_resource path="res://assets/tile_top.png" type="Texture" id=2]
-[ext_resource path="res://assets/tile_bottom_right.png" type="Texture" id=3]
-[ext_resource path="res://assets/tile_bottom_left.png" type="Texture" id=4]
-[ext_resource path="res://assets/tile_bottom.png" type="Texture" id=5]
-[ext_resource path="res://assets/tile_right.png" type="Texture" id=6]
-[ext_resource path="res://assets/tile_top_right.png" type="Texture" id=7]
-[ext_resource path="res://assets/tile_center.png" type="Texture" id=8]
-[ext_resource path="res://assets/tile_left.png" type="Texture" id=9]
+[ext_resource path="res://assets/Grass/rock.png" type="Texture" id=1]
+[ext_resource path="res://assets/Grass/dirt.png" type="Texture" id=2]
+[ext_resource path="res://assets/Grass/grass_top.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 8, 8 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
-[node name="tile_top_left" type="Sprite" parent="." index="0"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 32, 32 )
-texture = ExtResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="tile_top_left" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_top_left/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_top" type="Sprite" parent="." index="1"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 96, 32 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="tile_top" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_top/StaticBody2D2" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_bottom_right" type="Sprite" parent="." index="2"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 160, 160 )
-texture = ExtResource( 3 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="tile_bottom_right" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_bottom_right/StaticBody2D3" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_bottom_left" type="Sprite" parent="." index="3"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 32, 160 )
-texture = ExtResource( 4 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="tile_bottom_left" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_bottom_left/StaticBody2D4" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_bottom" type="Sprite" parent="." index="4"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 96, 160 )
-texture = ExtResource( 5 )
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="tile_bottom" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_bottom/StaticBody2D5" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_right" type="Sprite" parent="." index="5"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 160, 96 )
-texture = ExtResource( 6 )
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="tile_right" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_right/StaticBody2D6" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_top_right" type="Sprite" parent="." index="6"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 160, 32 )
-texture = ExtResource( 7 )
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="tile_top_right" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_top_right/StaticBody2D7" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_center" type="Sprite" parent="." index="7"]
-
-editor/display_folded = true
-position = Vector2( 96, 96 )
-texture = ExtResource( 8 )
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="tile_center" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_center/StaticBody2D8" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="tile_left" type="Sprite" parent="." index="8"]
+[node name="rock" type="Sprite" parent="." index="0"]
 
 position = Vector2( 32, 96 )
-texture = ExtResource( 9 )
+texture = ExtResource( 1 )
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="tile_left" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="rock" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -199,7 +26,45 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tile_left/StaticBody2D9" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="dirt" type="Sprite" parent="." index="1"]
+
+position = Vector2( 32, 64 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="dirt" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt/StaticBody2D2" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_top" type="Sprite" parent="." index="2"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="grass_top" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_top/StaticBody2D2" index="0"]
 
 shape = SubResource( 1 )
 

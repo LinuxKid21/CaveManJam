@@ -1,0 +1,66 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Characters/Crab.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Crab_Walk/0000.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Crab_Walk/0001.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Crab_Walk/0002.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Crab_Walk/0003.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Crab_Walk/0004.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Crab_Walk/0005.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Crab_Walk/0006.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Crab_Walk/0007.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Crab_Walk/0008.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Crab_Walk/0009.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Crab_Walk/0010.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Crab_Walk/0011.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Crab_Walk/0012.png" type="Texture" id=14]
+[ext_resource path="res://Characters/Crab_Walk/0013.png" type="Texture" id=15]
+[ext_resource path="res://Characters/Crab_Walk/0014.png" type="Texture" id=16]
+[ext_resource path="res://Characters/Crab_Walk/0015.png" type="Texture" id=17]
+[ext_resource path="res://Characters/Crab_Walk/0016.png" type="Texture" id=18]
+[ext_resource path="res://GameElements/HealthBar.tscn" type="PackedScene" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "walk",
+"speed": 24.0
+} ]
+
+[node name="Crab" type="KinematicBody2D"]
+
+position = Vector2( 10.717, -10.717 )
+scale = Vector2( 1.33491, 1.33491 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 80
+gravitySpeed = 627.2
+
+[node name="sprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 1 )
+animation = "walk"
+frame = 6
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="healthbar" parent="." index="1" instance=ExtResource( 19 )]
+
+position = Vector2( -4.85213, -29.4951 )
+scale = Vector2( 2.07052, 2.07052 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 22.8113, 1.22727, 23.7847, 29.8994, -5.96902, 30.334, -5.37404, 13.3345, -30.8121, 13.2957, -30.9366, -3.1273, -17.3752, -3.00288, -14.8869, -12.8318, -4.80915, -14.5736, 18.3323, -10.5923 )
+
+

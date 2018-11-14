@@ -1,22 +1,19 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://tileset.res" type="TileSet" id=1]
-[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://GameElements/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tiles.res" type="TileSet" id=1]
+[ext_resource path="res://GameElements/Spawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Crab.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32.754, 33.0161 )
-
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+scale = Vector2( 4, 4 )
 mode = 0
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 64, 64 )
+cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -30,649 +27,50 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 851970, 1, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 851975, 2, 0, 851976, 2, 0, 851977, 2, 0, 851978, 2, 0, 851979, 2, 0, 851980, 2, 0, 851981, 2, 0, 851982, 2, 0, 851983, 2, 0, 851984, 2, 0, 851985, 7, 0, 917506, 9, 0, 917507, 8, 0, 917508, 8, 0, 917509, 8, 0, 917510, 2, 0, 917511, 8, 0, 917512, 8, 0, 917513, 8, 0, 917514, 2, 0, 917515, 8, 0, 917516, 8, 0, 917517, 8, 0, 917518, 8, 0, 917519, 8, 0, 917520, 8, 0, 917521, 6, 0, 917524, 1, 0, 917525, 2, 0, 917526, 2, 0, 917527, 2, 0, 917528, 2, 0, 917529, 2, 0, 917530, 2, 0, 917531, 2, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 2, 0, 917536, 2, 0, 917537, 2, 0, 917538, 2, 0, 917539, 2, 0, 917540, 2, 0, 917541, 2, 0, 917542, 2, 0, 917543, 2, 0, 917544, 2, 0, 917545, 2, 0, 917546, 2, 0, 917547, 2, 0, 917548, 7, 0, 983042, 9, 0, 983043, 8, 0, 983044, 8, 0, 983045, 8, 0, 983046, 8, 0, 983047, 8, 0, 983048, 2, 0, 983049, 8, 0, 983050, 8, 0, 983051, 8, 0, 983052, 8, 0, 983053, 5, 0, 983054, 5, 0, 983055, 5, 0, 983056, 5, 0, 983057, 3, 0, 983060, 9, 0, 983061, 8, 0, 983062, 8, 0, 983063, 8, 0, 983064, 8, 0, 983065, 8, 0, 983066, 8, 0, 983067, 2, 0, 983068, 8, 0, 983069, 8, 0, 983070, 8, 0, 983071, 2, 0, 983072, 8, 0, 983073, 8, 0, 983074, 5, 0, 983075, 5, 0, 983076, 5, 0, 983077, 5, 0, 983078, 5, 0, 983079, 5, 0, 983080, 5, 0, 983081, 5, 0, 983082, 5, 0, 983083, 5, 0, 983084, 3, 0, 1048578, 9, 0, 1048579, 8, 0, 1048580, 2, 0, 1048581, 8, 0, 1048582, 8, 0, 1048583, 8, 0, 1048584, 8, 0, 1048585, 8, 0, 1048586, 8, 0, 1048587, 8, 0, 1048588, 3, 0, 1048596, 9, 0, 1048597, 8, 0, 1048598, 2, 0, 1048599, 8, 0, 1048600, 5, 0, 1048601, 5, 0, 1048602, 8, 0, 1048603, 8, 0, 1048604, 8, 0, 1048605, 8, 0, 1048606, 8, 0, 1048607, 8, 0, 1048608, 8, 0, 1048609, 3, 0, 1114114, 4, 0, 1114115, 5, 0, 1114116, 5, 0, 1114117, 5, 0, 1114118, 5, 0, 1114119, 5, 0, 1114120, 5, 0, 1114121, 5, 0, 1114122, 5, 0, 1114123, 3, 0, 1114132, 9, 0, 1114133, 8, 0, 1114134, 8, 0, 1114135, 6, 0, 1114138, 9, 0, 1114139, 8, 0, 1114140, 8, 0, 1114141, 8, 0, 1114142, 8, 0, 1114143, 8, 0, 1114144, 6, 0, 1179668, 9, 0, 1179669, 8, 0, 1179670, 8, 0, 1179671, 6, 0, 1179674, 9, 0, 1179675, 8, 0, 1179676, 2, 0, 1179677, 8, 0, 1179678, 8, 0, 1179679, 8, 0, 1179680, 6, 0, 1245204, 4, 0, 1245205, 8, 0, 1245206, 8, 0, 1245207, 6, 0, 1245210, 9, 0, 1245211, 8, 0, 1245212, 8, 0, 1245213, 8, 0, 1245214, 8, 0, 1245215, 2, 0, 1245216, 6, 0, 1310741, 4, 0, 1310742, 5, 0, 1310743, 3, 0, 1310746, 4, 0, 1310747, 5, 0, 1310748, 5, 0, 1310749, 5, 0, 1310750, 5, 0, 1310751, 5, 0, 1310752, 3, 0, 1441800, 1, 0, 1441801, 2, 0, 1441802, 7, 0, 1507336, 4, 0, 1507337, 5, 0, 1507338, 5, 0, 1507339, 2, 0, 1507340, 2, 0, 1507341, 7, 0, 1572875, 4, 0, 1572876, 5, 0, 1572877, 5, 0, 1572878, 2, 0, 1572879, 2, 0, 1572880, 7, 0, 1638414, 4, 0, 1638415, 5, 0, 1638416, 5, 0, 1638417, 2, 0, 1638418, 2, 0, 1638419, 2, 0, 1638420, 7, 0, 1703953, 4, 0, 1703954, 5, 0, 1703955, 5, 0, 1703956, 5, 0, 1703957, 2, 0, 1703958, 2, 0, 1703959, 7, 0, 1769493, 4, 0, 1769494, 5, 0, 1769495, 5, 0, 1769496, 2, 0, 1769497, 2, 0, 1769498, 7, 0, 1835032, 4, 0, 1835033, 5, 0, 1835034, 8, 0, 1835035, 2, 0, 1835036, 2, 0, 1835037, 7, 0, 1900570, 4, 0, 1900571, 5, 0, 1900572, 5, 0, 1900573, 3, 0 )
+tile_data = PoolIntArray( 262104, 10, 0, 262110, 10, 0, 262115, 10, 0, 262116, 10, 0, 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 262123, 10, 0, 262124, 10, 0, 262125, 10, 0, 262126, 10, 0, 262127, 10, 0, 262128, 10, 0, 262129, 10, 0, 262130, 10, 0, 262131, 10, 0, 262132, 10, 0, 262133, 10, 0, 262134, 10, 0, 262135, 10, 0, 262136, 10, 0, 262137, 10, 0, 262138, 10, 0, 262139, 10, 0, 262140, 10, 0, 327651, 11, 0, 327652, 11, 0, 327653, 11, 0, 327654, 11, 0, 327655, 11, 0, 327656, 11, 0, 327657, 11, 0, 327658, 11, 0, 327659, 11, 0, 327660, 11, 0, 327661, 11, 0, 327662, 11, 0, 327663, 11, 0, 327664, 11, 0, 327665, 11, 0, 327666, 11, 0, 327667, 11, 0, 327668, 11, 0, 327669, 11, 0, 327670, 11, 0, 327671, 11, 0, 327672, 11, 0, 327673, 11, 0, 327674, 11, 0, 327675, 11, 0, 327676, 11, 0, 327677, 10, 0, 327678, 10, 0, 393174, 10, 0, 393211, 11, 0, 393212, 11, 0, 393213, 11, 0, 393214, 10, 0, 393215, 10, 0, 327680, 10, 0, 327681, 10, 0, 458748, 11, 0, 458749, 11, 0, 458750, 11, 0, 458751, 11, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 524285, 11, 0, 524286, 11, 0, 524287, 2, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 2, 0, 458770, 10, 0, 458771, 10, 0, 458772, 10, 0, 458773, 10, 0, 458774, 10, 0, 458775, 10, 0, 458776, 10, 0, 458777, 10, 0, 458778, 10, 0, 458779, 10, 0, 458780, 10, 0, 458781, 10, 0, 458782, 10, 0, 458783, 10, 0, 458784, 10, 0, 589781, 10, 0, 655333, 10, 0, 655334, 10, 0, 655335, 10, 0, 655336, 10, 0, 655337, 10, 0, 589846, 0, 0, 589847, 2, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589855, 2, 0, 589856, 2, 0, 589857, 2, 0, 589858, 2, 0, 589859, 2, 0, 589860, 2, 0, 589861, 10, 0, 589862, 10, 0, 720869, 11, 0, 720870, 11, 0, 720871, 11, 0, 720872, 11, 0, 720873, 11, 0, 655381, 0, 0, 655382, 1610612736, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655390, 2, 0, 655391, 1, 0, 655392, 1, 0, 655393, 1, 0, 655394, 1, 0, 655395, 1, 0, 655396, 1, 0, 655397, 11, 0, 655398, 11, 0, 786390, 10, 0, 786395, 10, 0, 786396, 10, 0, 786397, 10, 0, 786398, 10, 0, 786399, 10, 0, 786400, 10, 0, 786401, 10, 0, 786402, 10, 0, 786415, 2, 0, 786416, 2, 0, 786417, 2, 0, 786418, 2, 0, 786419, 2, 0, 786420, 2, 0, 786421, 2, 0, 786422, 2, 0, 786423, 2, 0, 786424, 2, 0, 786425, 2, 0, 786426, 2, 0, 786427, 2, 0, 786428, 2, 0, 786429, 2, 0, 786430, 2, 0, 786431, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 2, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 0, 0, 720918, 1610612736, 0, 720919, 0, 0, 720920, 0, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 10, 0, 720925, 10, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 1, 0, 720930, 1, 0, 720931, 1, 0, 720932, 12, 0, 720933, 11, 0, 720934, 11, 0, 851931, 11, 0, 851932, 11, 0, 851933, 11, 0, 851934, 11, 0, 851935, 11, 0, 851936, 11, 0, 851937, 11, 0, 851938, 11, 0, 851946, 10, 0, 851947, 10, 0, 851948, 10, 0, 851951, 10, 0, 851952, 1, 0, 851953, 1, 0, 851954, 1, 0, 851955, 1, 0, 851956, 0, 0, 851957, 1, 0, 851958, 0, 0, 851959, 1, 0, 851960, 1, 0, 851961, 1, 0, 851962, 1, 0, 851963, 1, 0, 851964, 1, 0, 851965, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 0, 0, 786454, 1, 0, 786455, 0, 0, 786456, 1610612736, 0, 786457, 1, 0, 786458, 1, 0, 786459, 1, 0, 786460, 11, 0, 786461, 11, 0, 786462, 11, 0, 786463, 1, 0, 786464, 1, 0, 786465, 11, 0, 786466, 11, 0, 786467, 11, 0, 786468, 11, 0, 786469, 11, 0, 786470, 11, 0, 917482, 11, 0, 917483, 11, 0, 917484, 11, 0, 917487, 11, 0, 917488, 11, 0, 917489, 1, 0, 917490, 1, 0, 917491, 1, 0, 917492, 1, 0, 917493, 1, 0, 917494, 1, 0, 917495, 1, 0, 917496, 1, 0, 917497, 1, 0, 917498, 1, 0, 917499, 1, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 0, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 0, 0, 851986, 1, 0, 851987, 1, 0, 851988, -1610612736, 0, 851989, 0, 0, 851990, 1, 0, 851991, 1, 0, 851992, 0, 0, 851993, 0, 0, 851994, 1, 0, 851995, 1, 0, 851996, 12, 0, 851997, 11, 0, 851998, -1610612725, 0, 851999, 1, 0, 852000, 12, 0, 852001, 11, 0, 852002, 11, 0, 852003, 12, 0, 852004, -1610612724, 0, 852005, 11, 0, 852006, 11, 0, 983023, 11, 0, 983028, 1, 0, 983029, 1, 0, 983030, 1, 0, 983031, 1, 0, 983032, 1, 0, 983033, 1, 0, 983034, 1, 0, 983035, 1, 0, 983036, 1, 0, 983037, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 0, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 0, 0, 917514, 0, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 0, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 11, 0, 917533, 11, 0, 917534, 11, 0, 917535, 11, 0, 917536, 12, 0, 917537, -1610612724, 0, 917538, 12, 0, 917539, 11, 0, 917540, 11, 0, 917541, -1610612725, 0, 917542, 11, 0, 1048559, 11, 0, 1048566, 1, 0, 1048567, 1, 0, 1048568, 1, 0, 1048569, 1, 0, 1048570, 0, 0, 1048571, 1, 0, 1048572, 1, 0, 1048573, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 0, 0, 983041, 0, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 0, 0, 983065, 0, 0, 983066, 1, 0, 983067, 1, 0, 983068, 11, 0, 983069, 12, 0, 983070, 11, 0, 983071, 11, 0, 983072, 12, 0, 983073, 11, 0, 983074, 11, 0, 983075, 11, 0, 983076, 11, 0, 983077, 11, 0, 983078, 11, 0, 1114095, 11, 0, 1114101, 10, 0, 1114102, 11, 0, 1114103, -1610612724, 0, 1114104, 1, 0, 1114105, 1, 0, 1114106, 1, 0, 1114107, 1, 0, 1114108, 1, 0, 1114109, 1, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 0, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 0, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 11, 0, 1048605, 11, 0, 1048606, -1610612724, 0, 1048607, 11, 0, 1048608, 11, 0, 1048609, 11, 0, 1048610, 11, 0, 1048611, -1610612725, 0, 1048612, 11, 0, 1048613, 11, 0, 1048614, -1610612724, 0, 1179631, 11, 0, 1179636, 10, 0, 1179637, 11, 0, 1179638, 11, 0, 1179639, 11, 0, 1179640, 11, 0, 1179641, 11, 0, 1179642, 1, 0, 1179643, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 1, 0, 1179647, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 0, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0, 1114139, 1, 0, 1114140, 11, 0, 1114141, 11, 0, 1114142, 11, 0, 1114143, 12, 0, 1114144, 11, 0, 1114145, 11, 0, 1114146, 11, 0, 1114147, 11, 0, 1114148, 11, 0, 1114149, 11, 0, 1114150, 11, 0, 1245167, 11, 0, 1245171, 10, 0, 1245172, 11, 0, 1245173, 11, 0, 1245174, 11, 0, 1245175, 11, 0, 1245176, 11, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1310703, 11, 0, 1376239, 11, 0, 1441775, 11, 0, 1441776, 11, 0, 1441777, 11, 0, 1441778, 11, 0, 1441779, 11, 0, 1441780, 11, 0, 1441781, 11, 0, 1441782, 11, 0, 1441783, 11, 0, 1441784, 11, 0, 1441785, 11, 0, 1441786, 11, 0, 1441787, 11, 0, 1441788, 11, 0, 1441789, 11, 0, 1441790, 11, 0, 1441791, 11, 0, 1376256, 11, 0, 1376257, 11, 0, 1376258, 11, 0, 1376259, 11, 0, 1376260, 11, 0, 1376261, 11, 0, 1376262, 11, 0, 1376263, 11, 0, 1376264, 11, 0, 1376265, 11, 0, 1376266, 11, 0, 1376267, 11, 0, 1376268, 11, 0, 1376269, 11, 0, 1376270, 11, 0, 1376271, 11, 0, 1376272, 11, 0, 1376273, 11, 0, 1376274, 11, 0, 1376275, 11, 0, 1376276, 11, 0, 1376277, 11, 0, 1376278, 11, 0, 1376279, 11, 0, 1376280, 11, 0, 1376281, 11, 0, 1376282, 11, 0, 1376283, 11, 0, 1376284, 11, 0, 1376285, 11, 0, 1376286, 11, 0, 1376287, 11, 0, 1376288, 11, 0, 1376289, 11, 0, 1376290, 11, 0, 1376291, 11, 0, 1376292, 11, 0, 1376293, 11, 0, 1376294, 11, 0, 1376300, 10, 0, 1376301, 10, 0, 1376302, 10, 0, 1376303, 10, 0, 1376304, 10, 0, 1376305, 10, 0, 1376306, 10, 0, 1376307, 10, 0, 1376308, 10, 0, 1376309, 10, 0, 1507385, 10, 0, 1572920, 10, 0, 1572921, 11, 0, 1638455, 10, 0, 1638456, 11, 0, 1638457, 11, 0, 1703990, 10, 0, 1703991, 11, 0, 1703992, 11, 0, 1703993, 11, 0, 1769525, 10, 0, 1769526, 11, 0, 1769527, 11, 0, 1769528, 11, 0, 1769529, 11, 0, 1835060, 10, 0, 1835061, 11, 0, 1835062, 11, 0, 1835063, 11, 0, 1835064, 11, 0, 1835065, 11, 0, 1900580, 10, 0, 1900595, 10, 0, 1900596, 11, 0, 1900597, 11, 0, 1900598, 11, 0, 1900599, 11, 0, 1900600, 11, 0, 1900601, 11, 0, 1966116, 11, 0, 1966117, 10, 0, 1966118, 10, 0, 1966119, 10, 0, 1966120, 10, 0, 1966121, 10, 0, 1966122, 10, 0, 1966123, 10, 0, 1966124, 10, 0, 1966125, 10, 0, 1966126, 10, 0, 1966127, 10, 0, 1966128, 10, 0, 1966129, 10, 0, 1966130, 10, 0, 1966131, 11, 0, 1966132, 11, 0, 1966133, 11, 0, 1966134, 11, 0, 1966135, 11, 0, 1966136, 11, 0, 1966137, 11, 0, 2031652, 11, 0, 2031653, 11, 0, 2031654, 11, 0, 2031655, 11, 0, 2031656, 11, 0, 2031657, 11, 0, 2031658, 11, 0, 2031659, 11, 0, 2031660, 11, 0, 2031661, 11, 0, 2031662, 11, 0, 2031663, 11, 0, 2031664, 11, 0, 2031665, 11, 0, 2031666, 11, 0, 2031667, 11, 0, 2031668, 11, 0, 2031669, 11, 0, 2031670, 11, 0, 2031671, 11, 0, 2031672, 11, 0, 2031673, 11, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Node" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Spawner" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 243.247, 767.158 )
+position = Vector2( 361.605, 536.59 )
+count = 10
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="." index="2"]
+[node name="Spawner2" parent="." index="2" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-position = Vector2( -111.993, 998.82 )
-rotation = -0.912336
-scale = Vector2( 5.63503, 5.83531 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 949.77, 216.523 )
+interval = 2.0
+flipped = true
+count = 5
 
-[node name="icon" type="Sprite" parent="RigidBody2D2" index="0"]
+[node name="Node" parent="." index="3" instance=ExtResource( 3 )]
 
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
+position = Vector2( 213.247, 637.158 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" index="1"]
+[node name="Portal" parent="." index="4" instance=ExtResource( 4 )]
 
-shape = SubResource( 1 )
+position = Vector2( 1235.9, 646.509 )
 
-[node name="RigidBody2D3" type="RigidBody2D" parent="." index="3"]
+[node name="Crab" parent="." index="5" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-position = Vector2( -469.233, 1006.36 )
-rotation = -1.31731
-scale = Vector2( 5.63503, 5.83531 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 629.605, 664.088 )
+speed = 60
 
-[node name="icon" type="Sprite" parent="RigidBody2D3" index="0"]
+[node name="Crab2" parent="." index="6" instance=ExtResource( 5 )]
 
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
+position = Vector2( 837.71, 661.295 )
+speed = 60
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" index="1"]
+[node name="Crab3" parent="." index="7" instance=ExtResource( 5 )]
 
-shape = SubResource( 1 )
+position = Vector2( 714.803, 566.32 )
+speed = 60
 
-[node name="RigidBody2D4" type="RigidBody2D" parent="." index="4"]
+[node name="Crab4" parent="." index="8" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-position = Vector2( -889.035, 1032.95 )
-rotation = -2.35619
-scale = Vector2( 5.63503, 5.83531 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D4" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D5" type="RigidBody2D" parent="." index="5"]
-
-editor/display_folded = true
-position = Vector2( -1272.23, 1004.28 )
-rotation = -1.86482
-scale = Vector2( 5.63503, 5.83531 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D5" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D6" type="RigidBody2D" parent="." index="6"]
-
-editor/display_folded = true
-position = Vector2( -1426.14, 793.249 )
-rotation = -1.86482
-scale = Vector2( 5.63503, 5.83531 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D6" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D7" type="RigidBody2D" parent="." index="7"]
-
-editor/display_folded = true
-position = Vector2( -1013.61, 638.928 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D7" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D8" type="RigidBody2D" parent="." index="8"]
-
-editor/display_folded = true
-position = Vector2( -757.37, 510.437 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D8" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D8" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D9" type="RigidBody2D" parent="." index="9"]
-
-editor/display_folded = true
-position = Vector2( -516.81, 397.511 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D9" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D9" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D10" type="RigidBody2D" parent="." index="10"]
-
-editor/display_folded = true
-position = Vector2( -251.847, 307.154 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D10" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D10" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D11" type="RigidBody2D" parent="." index="11"]
-
-editor/display_folded = true
-position = Vector2( 99.3251, 301.776 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D11" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D11" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D12" type="RigidBody2D" parent="." index="12"]
-
-editor/display_folded = true
-position = Vector2( 640.982, 299.455 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D12" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D12" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D13" type="RigidBody2D" parent="." index="13"]
-
-editor/display_folded = true
-position = Vector2( 1225.55, 297.785 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D13" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D13" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D14" type="RigidBody2D" parent="." index="14"]
-
-editor/display_folded = true
-position = Vector2( 1355.82, 112.394 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D14" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D14" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D15" type="RigidBody2D" parent="." index="15"]
-
-editor/display_folded = true
-position = Vector2( 1512.82, 32.2255 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D15" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D15" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D16" type="RigidBody2D" parent="." index="16"]
-
-editor/display_folded = true
-position = Vector2( 1110.3, -42.9328 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D16" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D16" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D17" type="RigidBody2D" parent="." index="17"]
-
-editor/display_folded = true
-position = Vector2( 630.961, -44.603 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D17" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D17" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="RigidBody2D18" type="RigidBody2D" parent="." index="18"]
-
-editor/display_folded = true
-position = Vector2( 118.215, -69.6557 )
-scale = Vector2( 1.8912, 1.78289 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 1
-mass = 1.0
-friction = 0.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="icon" type="Sprite" parent="RigidBody2D18" index="0"]
-
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D18" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="Spawner" parent="." index="19" instance=ExtResource( 4 )]
-
-position = Vector2( 375.251, 590.559 )
-interval = 0.75
+position = Vector2( 1072.35, 583.779 )
+speed = 60
 
 
