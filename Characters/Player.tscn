@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Player_Idle/0030.png" type="Texture" id=2]
@@ -132,6 +132,7 @@
 [ext_resource path="res://Characters/Player_Shoot/0179.png" type="Texture" id=130]
 [ext_resource path="res://Characters/Player_Shoot/0180.png" type="Texture" id=131]
 [ext_resource path="res://Characters/Player_Shoot/0181.png" type="Texture" id=132]
+[ext_resource path="res://GameElements/UI.tscn" type="PackedScene" id=133]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -167,7 +168,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -214,5 +215,7 @@ _sections_unfolded = [ "Drag Margin", "Smoothing" ]
 position = Vector2( 0.711983, -3.7023 )
 frames = SubResource( 2 )
 animation = "idle"
+
+[node name="UI" parent="." index="3" instance=ExtResource( 133 )]
 
 

@@ -17,13 +17,15 @@ enum {STATE_IDLE, STATE_RUNNING, STATE_JUMPING, STATE_SHOOTING}
 var state = STATE_IDLE
 var last_state = state
 
+var last_floor_height = get_position().y
+
 var anim = 'idle'
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	#Input.set_custom_mouse_cursor(crosshair_img)
-	pass
+	last_floor_height = get_position().y
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -49,13 +51,13 @@ func _physics_process(delta):
 		$sprite.set_frame(0)
 		
 	if(anim != 'shoot'):
-		if(Input.is_action_pressed("player_move_right")):
+		if(Input.is_action_pressed("player_move_right") and not Input.is_action_pressed("player_fire")):
 			velocity.x = speed
 			$sprite.set_flip_h(true)
 			if(is_on_floor()):
 				anim = 'walk'
 			facing_right = true
-		if(Input.is_action_pressed("player_move_left")):
+		if(Input.is_action_pressed("player_move_left") and not Input.is_action_pressed("player_fire")):
 			velocity.x = -speed
 			$sprite.set_flip_h(false)
 			if(is_on_floor()):
@@ -102,6 +104,12 @@ func _physics_process(delta):
 		velocity.y = new_velocity.y
 		
 	last_state = state
+	
+	if(is_on_floor()):
+		last_floor_height = get_position().y
+	else:
+		if(position.y - last_floor_height > 5000): # dead
+			get_tree().reload_current_scene()
 #	for i in range(get_slide_count()):
 #		collision = get_slide_collision(i)
 #		collision.collider.
