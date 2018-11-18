@@ -27,7 +27,10 @@ func _process(delta):
 	var hit_non_player = false
 	for body in overlapping:
 		if(body is CaveMan or body is Ant):
-			body.damage(1)
+			#body.damage(1)
+			var tag = preload("res://Characters/BulletTag.tscn").instance()
+			#tag.set_pos(0,0)
+			body.add_child(tag)
 		if(not body is Player):
 			hit_non_player = true
 	

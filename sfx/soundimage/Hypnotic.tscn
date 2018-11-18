@@ -2,13 +2,13 @@
 
 [ext_resource path="res://sfx/soundimage/Hypnotic-Puzzle3.ogg" type="AudioStream" id=1]
 
-[node name="Hypnotic" type="AudioStreamPlayer"]
+[node name="Hypnotic" type="AudioStreamPlayer" index="0"]
 
 stream = ExtResource( 1 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 
