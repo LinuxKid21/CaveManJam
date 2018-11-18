@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Characters/CaveMan.gd" type="Script" id=1]
 [ext_resource path="res://Characters/CaveMan_walk/0001.png" type="Texture" id=2]
@@ -51,6 +51,9 @@
 [ext_resource path="res://Characters/CaveMan_Dead/0084.png" type="Texture" id=49]
 [ext_resource path="res://Characters/CaveMan_Dead/0085.png" type="Texture" id=50]
 [ext_resource path="res://Characters/CaveMan_Dead/0086.png" type="Texture" id=51]
+[ext_resource path="res://sfx/cave_man1.ogg" type="AudioStream" id=52]
+[ext_resource path="res://sfx/cave_man2.ogg" type="AudioStream" id=53]
+[ext_resource path="res://sfx/cave_man3.ogg" type="AudioStream" id=54]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -94,5 +97,38 @@ frames = SubResource( 2 )
 animation = "walk"
 frame = 5
 _sections_unfolded = [ "Z Index" ]
+
+[node name="grunt_1" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 52 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 2.0
+bus = "Master"
+area_mask = 1
+
+[node name="grunt_2" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 53 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 2.0
+bus = "Master"
+area_mask = 1
+
+[node name="grunt_3" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 54 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 2.0
+bus = "Master"
+area_mask = 1
 
 

@@ -1,5 +1,5 @@
 extends Area2D
-const Crab = preload("res://Characters/Crab.gd")
+const Ant = preload("res://Characters/Ant.gd")
 const CaveMan = preload("res://Characters/CaveMan.gd")
 const Player = preload("res://Characters/Player.gd")
 
@@ -26,7 +26,7 @@ func _process(delta):
 	var overlapping = get_overlapping_bodies()
 	var hit_non_player = false
 	for body in overlapping:
-		if(body is CaveMan or body is Crab):
+		if(body is CaveMan or body is Ant):
 			body.damage(1)
 		if(not body is Player):
 			hit_non_player = true

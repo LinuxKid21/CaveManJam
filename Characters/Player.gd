@@ -6,26 +6,28 @@ extends KinematicBody2D
 
 export var speed = 300
 export var gravitySpeed = 9.8*64
+
+export var required_cave_men = 5
+export var next_level = -1
+
 var velocity = Vector2(0,0)
 var facing_right = false
 
 var time_idle = 0.0
 var time_in_state = 0.0
 
-enum {STATE_IDLE, STATE_RUNNING, STATE_JUMPING, STATE_SHOOTING}
-
-var state = STATE_IDLE
-var last_state = state
-
 var last_floor_height = get_position().y
 
 var anim = 'idle'
+var last_anim = anim
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	#Input.set_custom_mouse_cursor(crosshair_img)
 	last_floor_height = get_position().y
+	$UI.set_required(required_cave_men)
+	$UI.next_level = next_level
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -34,6 +36,7 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
+	last_anim = anim
 	velocity.y += delta * gravitySpeed
 	
 	if(abs(velocity.x) < 1*delta):
@@ -82,12 +85,18 @@ func _physics_process(delta):
 		elif(is_on_floor() and anim == 'jump'):
 			anim = 'idle'
 		
+		if(is_on_floor() and anim == 'walk'):
+			if(last_anim != 'walk'):
+				$run_sound.play()
+		else:
+			$run_sound.stop()
+		
 		if(anim == 'idle'):
 			time_idle += delta
 		else:
 			time_idle = 0
 		
-		if(time_idle > 10):
+		if(time_idle > 3):
 			time_idle = -4
 		
 		if(time_idle < 0 and anim == 'idle'):
@@ -103,12 +112,11 @@ func _physics_process(delta):
 	else:
 		velocity.y = new_velocity.y
 		
-	last_state = state
 	
 	if(is_on_floor()):
 		last_floor_height = get_position().y
 	else:
-		if(position.y - last_floor_height > 5000): # dead
+		if(position.y - last_floor_height > 4000): # dead
 			get_tree().reload_current_scene()
 #	for i in range(get_slide_count()):
 #		collision = get_slide_collision(i)

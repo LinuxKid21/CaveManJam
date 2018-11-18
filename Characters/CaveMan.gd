@@ -14,6 +14,7 @@ var last_velocity = Vector2(0,0)
 
 func _ready():
 	velocity.x = speed;
+	_maybe_grunt()
 
 
 func _normal(delta):
@@ -27,6 +28,7 @@ func _normal(delta):
 	
 	if(is_on_wall()):
 		velocity.x *= -1
+		_maybe_grunt()
 		
 	if(velocity.x > 0):
 		velocity.x = speed
@@ -69,3 +71,13 @@ func _physics_process(delta):
 		velocity.y = 0
 	else:
 		velocity.y = new_velocity.y
+
+func _maybe_grunt():
+	if(rand_range(0, 1) < .1):
+		var choice = int(rand_range(0, 3))
+		if(choice == 0):
+			$grunt_1.play()
+		if(choice == 1):
+			$grunt_2.play()
+		if(choice == 2):
+			$grunt_3.play()
