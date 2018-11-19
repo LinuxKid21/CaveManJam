@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const CaveMan = preload("res://Characters/CaveMan.gd")
+const Player = preload("res://Characters/Player.gd")
 
 export var speed = 80
 export var gravitySpeed = 9.8*64
@@ -14,10 +16,6 @@ func _ready():
 		speed *= -1
 
 func _normal(delta):
-	
-	if(is_on_wall()):
-		velocity.x *= -1
-		
 	if(velocity.x > 0):
 		velocity.x = speed
 		$sprite.set_flip_h(true)
@@ -33,6 +31,20 @@ func _normal(delta):
 		velocity.y = 0
 	else:
 		velocity.y = new_velocity.y
+	
+	
+	
+	if(is_on_wall()):
+		var turn_around = true
+		var count = get_slide_count()
+		for i in range(count):
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+			if(collider and collider is CaveMan or collider is Player):
+				turn_around = false
+				collider.damage(1)
+		if(turn_around):
+			velocity.x *= -1
 
 func turn_around():
 	velocity.x *= -1
@@ -40,12 +52,14 @@ func turn_around():
 func damage(amount):
 	dead = true
 	$sprite.play("die")
-	
+
+var has_collision = true
 func _physics_process(delta):
 	if(not dead):
 		_normal(delta)
-	elif($sprite.get_frame() >= 5 and $collision):
+	elif($sprite.get_frame() >= 5 and has_collision):
 		$collision.queue_free()
+		has_collision = false
 		fading = .9999
 	elif(fading < 1):
 		fading -= delta * 3

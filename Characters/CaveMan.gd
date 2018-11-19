@@ -50,7 +50,6 @@ func turn_around():
 func damage(amount):
 	state = 'dead'
 	velocity.x = 0
-	$sprite.stop()
 
 func _physics_process(delta):
 	if(state == 'normal'):

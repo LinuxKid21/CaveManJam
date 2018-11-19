@@ -35,6 +35,9 @@ func _process(delta):
 #	if(Input.is_action_pressed("player_fire")):
 	pass
 
+func damage(amount):
+	get_tree().reload_current_scene()
+
 func _physics_process(delta):
 	last_anim = anim
 	velocity.y += delta * gravitySpeed
@@ -117,7 +120,7 @@ func _physics_process(delta):
 		last_floor_height = get_position().y
 	else:
 		if(position.y - last_floor_height > 4000): # dead
-			get_tree().reload_current_scene()
+			damage(1)
 #	for i in range(get_slide_count()):
 #		collision = get_slide_collision(i)
 #		collision.collider.
