@@ -15,14 +15,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
-func _on_Level1_pressed():
-	get_tree().change_scene("res://Levels/Level_1.tscn")
-
-
-func _on_Level2_pressed():
-	get_tree().change_scene("res://Levels/Level_2.tscn")
-
 func _log_2(amount):
 	return log(amount) / log(2)
 
@@ -33,3 +25,25 @@ func _on_MasterVolume_value_changed(value):
 func _on_MusicVolume_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), 6*(_log_2(value)-_log_2(100)))
 	print(6*(_log_2(value)-_log_2(100)))
+
+
+
+func _on_Level1_pressed():
+	get_tree().change_scene("res://Levels/Level_1.tscn")
+
+
+func _on_Level2_pressed():
+	get_tree().change_scene("res://Levels/Level_2.tscn")
+	
+	
+
+func _on_Level3_pressed():
+	get_tree().change_scene("res://Levels/Level_3.tscn")
+
+
+func _on_Level4_pressed():
+	get_tree().change_scene("res://Levels/Level_4.tscn")
+
+
+func _on_Level5_pressed():
+	get_tree().change_scene("res://Levels/Level_5.tscn")
