@@ -58,7 +58,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.68602, 31.8544 )
+extents = Vector2( 6.5, 31.1 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -87,8 +87,9 @@ gravitySpeed = 627.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( 0, 0.858559 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="sprite" type="AnimatedSprite" parent="." index="1"]
 

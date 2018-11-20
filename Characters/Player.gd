@@ -21,6 +21,10 @@ var last_floor_height = get_position().y
 var anim = 'idle'
 var last_anim = anim
 
+var time = 0
+
+export var tutorial_file = ""
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -28,6 +32,11 @@ func _ready():
 	last_floor_height = get_position().y
 	$UI.set_required(required_cave_men)
 	$UI.next_level = next_level
+	
+	if(tutorial_file != ""):
+		var file = File.new()
+		file.open(tutorial_file, file.READ)
+		$UI.tutorial_lines = file.get_as_text().split("\n")
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -39,6 +48,19 @@ func damage(amount):
 	get_tree().reload_current_scene()
 
 func _physics_process(delta):
+	time += delta
+	
+	if(time < 3 and not Input.is_action_pressed("escape")):
+		get_tree().paused = true
+		$camera.set_zoom(Vector2(3,3))
+	elif($UI.can_unpause):
+		time = 999 # some large number
+		get_tree().paused = false
+		$camera.set_zoom(Vector2(1,1))
+	
+	if(get_tree().paused):
+		return
+	
 	last_anim = anim
 	velocity.y += delta * gravitySpeed
 	
@@ -109,11 +131,11 @@ func _physics_process(delta):
 	else:
 		$sprite.play(anim)
 		
-	var new_velocity = move_and_slide(velocity, Vector2(0, -1), 5, 4, PI/4)
-	if(new_velocity.y < velocity.y):
-		velocity.y = 0
-	else:
-		velocity.y = new_velocity.y
+	var new_velocity = move_and_slide(velocity, Vector2(0, -1), 1)
+	#if(new_velocity.y < velocity.y):
+	#	velocity.y = 0
+	#else:
+	velocity.y = new_velocity.y
 		
 	
 	if(is_on_floor()):
@@ -121,7 +143,4 @@ func _physics_process(delta):
 	else:
 		if(position.y - last_floor_height > 4000): # dead
 			damage(1)
-#	for i in range(get_slide_count()):
-#		collision = get_slide_collision(i)
-#		collision.collider.
 	

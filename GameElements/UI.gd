@@ -8,15 +8,41 @@ var saved = 0
 var need_to_save = 5
 export var next_level = -1
 
+var tutorial_lines = Array()
+var line_idx = 0
+var can_unpause = false
+onready var disp_ui = $MarginContainer/VBoxContainer/Tutorial
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+	var next_level_ui = $MarginContainer/VBoxContainer/NextLevelRow/NextLevel
+	var tween = $MarginContainer/VBoxContainer/NextLevelRow/tween
+	tween.interpolate_property(next_level_ui, "modulate", Color(1,1,1), Color(1,.25,0), 1, Tween.TRANS_SINE, Tween.EASE_OUT_IN)
+	tween.interpolate_property(next_level_ui, "modulate", Color(1,.25,0), Color(1,1,1), 1, Tween.TRANS_SINE, Tween.EASE_OUT_IN, 1)
+	tween.start()
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+var time = 0
+func _process(delta):
+	if(line_idx >= len(tutorial_lines)):
+		can_unpause = true
+		disp_ui.set_text("")
+	else:
+		var line = tutorial_lines[line_idx]
+		var letter_count = int(time * 50)
+		
+		var excess = 0
+		if(letter_count >= len(line)):
+			excess = letter_count - len(line)
+			letter_count = len(line)
+		var display = line.substr(0,letter_count)
+		disp_ui.set_text(display)
+		
+		if(excess >= 100 or Input.is_action_just_pressed("escape")):
+			line_idx += 1
+			time = 0
+	time += delta
+
 
 func set_required(amount):
 	need_to_save = amount

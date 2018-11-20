@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+extents = Vector2( 32, 32 )
 
 [node name="Node" type="Node"]
 
@@ -32,7 +32,7 @@ shape = SubResource( 1 )
 
 [node name="dirt" type="Sprite" parent="." index="1"]
 
-position = Vector2( 32, 64 )
+position = Vector2( 96, 32 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="dirt" index="0"]

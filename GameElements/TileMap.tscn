@@ -4,10 +4,9 @@
 
 [node name="TileMap" type="TileMap" index="0"]
 
-scale = Vector2( 4, 4 )
 mode = 0
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
+cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
