@@ -38,16 +38,9 @@ func _ready():
 		file.open(tutorial_file, file.READ)
 		$UI.tutorial_lines = file.get_as_text().split("\n")
 
+
+var interpolate_time = 0
 func _process(delta):
-	# Called every frame. Delta is time since last frame.
-	# Update game logic here.
-#	if(Input.is_action_pressed("player_fire")):
-	pass
-
-func damage(amount):
-	get_tree().reload_current_scene()
-
-func _physics_process(delta):
 	time += delta
 	
 	if(time < 3 and not Input.is_action_pressed("escape")):
@@ -57,20 +50,14 @@ func _physics_process(delta):
 		time = 999 # some large number
 		get_tree().paused = false
 		$camera.set_zoom(Vector2(1,1))
-	
+		
 	if(get_tree().paused):
 		return
+		
 	
 	last_anim = anim
-	velocity.y += delta * gravitySpeed
 	
-	if(abs(velocity.x) < 1*delta):
-		velocity.x = 0;
-	elif(velocity.x > 0):
-		velocity.x -= 1500 * delta
-	elif(velocity.x < 0):
-		velocity.x += 1500 * delta
-
+	
 	if(anim != 'shoot' and anim != 'jump'):
 		anim = 'idle'
 
@@ -131,16 +118,45 @@ func _physics_process(delta):
 	else:
 		$sprite.play(anim)
 		
-	var new_velocity = move_and_slide(velocity, Vector2(0, -1), 1)
-	#if(new_velocity.y < velocity.y):
-	#	velocity.y = 0
-	#else:
-	velocity.y = new_velocity.y
-		
 	
 	if(is_on_floor()):
 		last_floor_height = get_position().y
 	else:
 		if(position.y - last_floor_height > 4000): # dead
 			damage(1)
+			
+	
+	# Interpolate	
+	var alpha = interpolate_time / (1.0/60.0)
+	var inverse_alpha = 1 - alpha
+	var to_last_pos = prev_position - get_position()
+	var desired_draw_offset = to_last_pos * inverse_alpha
+	$sprite.set_position(desired_draw_offset)
+	interpolate_time += delta
+
+func damage(amount):
+	get_tree().reload_current_scene()
+
+var prev_position = get_position()
+func _physics_process(delta):
+	if(get_tree().paused):
+		return
+	
+	prev_position = get_position()
+	interpolate_time = 0
+	
+	velocity.y += delta * gravitySpeed
+	
+	
+	if(abs(velocity.x) < 1*delta):
+		velocity.x = 0;
+	elif(velocity.x > 0):
+		velocity.x -= 1500 * delta
+	elif(velocity.x < 0):
+		velocity.x += 1500 * delta
+
+		
+	var new_velocity = move_and_slide(velocity, Vector2(0, -1), 1)
+	velocity.y = new_velocity.y
+		
 	
