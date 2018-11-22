@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GameElements/SpikeStand.gd" type="Script" id=1]
+[ext_resource path="res://assets/SpikeStandExplode/01.png" type="Texture" id=2]
+[ext_resource path="res://assets/SpikeStandExplode/02.png" type="Texture" id=3]
+[ext_resource path="res://assets/SpikeStandExplode/03.png" type="Texture" id=4]
+[ext_resource path="res://assets/SpikeStandExplode/04.png" type="Texture" id=5]
+[ext_resource path="res://assets/SpikeStandExplode/05.png" type="Texture" id=6]
+[ext_resource path="res://assets/SpikeStandExplode/06.png" type="Texture" id=7]
+[ext_resource path="res://assets/SpikeStand.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "explode",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "nothing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 62, 65 )
+
+[node name="SpikeStand" type="StaticBody2D"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="SpikeStand" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "nothing"
+_sections_unfolded = [ "Transform" ]
+
+[node name="collision" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+

@@ -28,7 +28,7 @@ func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	if(Input.is_action_pressed("player_trigger") and not dead):
-		_explode_anim(get_parent().position)
+		_explode_anim(get_global_position())
 		
 		var overlapping = $area.get_overlapping_bodies()
 		for body in overlapping:

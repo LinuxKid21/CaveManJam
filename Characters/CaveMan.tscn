@@ -55,10 +55,11 @@
 [ext_resource path="res://sfx/cave_man2.ogg" type="AudioStream" id=53]
 [ext_resource path="res://sfx/cave_man3.ogg" type="AudioStream" id=54]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.5, 31.1 )
+radius = 6.01901
+height = 48.7173
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -87,7 +88,7 @@ gravitySpeed = 627.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, 0.858559 )
+position = Vector2( -0.527039, 3.49377 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 

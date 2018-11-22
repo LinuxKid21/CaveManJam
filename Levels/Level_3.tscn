@@ -37,6 +37,7 @@ count = 5
 
 position = Vector2( 223, 160 )
 next_level = 4
+tutorial_file = "res://Levels/Tutorial_3.txt"
 
 [connection signal="cave_man_saved" from="Portal" to="Player/UI" method="_on_Portal_cave_man_saved"]
 

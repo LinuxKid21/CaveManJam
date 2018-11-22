@@ -135,10 +135,11 @@
 [ext_resource path="res://GameElements/UI.tscn" type="PackedScene" id=133]
 [ext_resource path="res://sfx/run.ogg" type="AudioStream" id=134]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 3.47778, 28.3493 )
+radius = 8.87468
+height = 45.8241
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -177,7 +178,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause", "Transform" ]
+_sections_unfolded = [ "Pause", "Transform", "collision" ]
 speed = 300
 gravitySpeed = 627.2
 required_cave_men = 5
@@ -186,6 +187,7 @@ tutorial_file = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( -0.642555, 0.545378 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

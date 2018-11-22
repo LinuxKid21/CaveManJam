@@ -47,3 +47,37 @@ func _on_Level4_pressed():
 
 func _on_Level5_pressed():
 	get_tree().change_scene("res://Levels/Level_5.tscn")
+
+
+func _on_Level6_pressed():
+	get_tree().change_scene("res://Levels/Level_6.tscn")
+
+
+func _on_Level7_pressed():
+	get_tree().change_scene("res://Levels/Level_7.tscn")
+
+
+
+func set_tab(idx):
+	$Tabs.set_current_tab(idx)
+
+func _on_Play_pressed():
+	set_tab(1)
+
+
+func _on_Settings_pressed():
+	set_tab(2)
+
+
+func _on_Keyboard_pressed():
+	set_tab(3)
+
+func _on_XBox_pressed():
+	set_tab(4)
+
+func _on_Credits_pressed():
+	set_tab(5)
+
+func _on_Back_pressed():
+	set_tab(0)
+
