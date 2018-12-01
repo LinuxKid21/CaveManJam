@@ -11,6 +11,7 @@ export var next_level = -1
 var tutorial_lines = Array()
 var line_idx = 0
 var can_unpause = false
+var has_idol = -1
 onready var disp_ui = $MarginContainer/VBoxContainer/Tutorial
 
 func _ready():
@@ -60,13 +61,22 @@ func _on_Portal_cave_man_saved():
 		var restart_level_ui = $MarginContainer/VBoxContainer/NextLevelRow/Restart
 		next_level_ui.set_visible(true)
 		restart_level_ui.set_visible(false)
+		GameLoad.level_unlocked(next_level)
+		check_save()
 
+func check_save():
+	if(saved >= need_to_save):
+		if(has_idol != -1):
+			GameLoad.found_idol(has_idol)
+		GameLoad.save_game()
 
 func _on_NextLevel_pressed():
-	if(next_level == -1):
+	if(next_level <= 0):
 		pass # TODO end of game congrats
 	else:
 		get_tree().change_scene("res://Levels/Level_" + str(next_level) + ".tscn")
+		GameLoad.level_unlocked(next_level)
+		GameLoad.save_game()
 	
 
 

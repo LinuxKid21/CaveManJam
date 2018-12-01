@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/Bg_thing.png" type="Texture" id=1]
+[ext_resource path="res://assets/Cloud1.png" type="Texture" id=2]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -28,7 +29,87 @@ _sections_unfolded = [ "Motion" ]
 position = Vector2( 3.25464, 8.95056 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 10000, 10000 )
+region_rect = Rect2( 0, 0, 100000, 100000 )
 _sections_unfolded = [ "Region" ]
+
+[node name="Cloud1" type="Sprite" parent="ParallaxLayer" index="1"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( -761.506, -834.377 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud2" type="Sprite" parent="ParallaxLayer" index="2"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( -2399.49, 1338.47 )
+rotation = -1.53933
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud3" type="Sprite" parent="ParallaxLayer" index="3"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( 3127.32, 502.757 )
+rotation = 0.299526
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud4" type="Sprite" parent="ParallaxLayer" index="4"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( 6482.07, -552.277 )
+rotation = 0.995106
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud5" type="Sprite" parent="ParallaxLayer" index="5"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( 9847.45, 1020.97 )
+rotation = -2.70674
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud6" type="Sprite" parent="ParallaxLayer" index="6"]
+
+modulate = Color( 1, 0.689453, 0.25, 0.121569 )
+position = Vector2( -9048.5, 2711.78 )
+rotation = 2.37865
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud7" type="Sprite" parent="ParallaxLayer" index="7"]
+
+modulate = Color( 0.9375, 0.725098, 0.725098, 0.121569 )
+position = Vector2( -6101, 4950.96 )
+rotation = 0.582257
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud8" type="Sprite" parent="ParallaxLayer" index="8"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( -1462.7, 5110.9 )
+rotation = -1.93545
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Cloud9" type="Sprite" parent="ParallaxLayer" index="9"]
+
+modulate = Color( 1, 1, 1, 0.121569 )
+position = Vector2( 5551.87, 3877.07 )
+rotation = 1.30594
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

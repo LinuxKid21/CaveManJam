@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameElements/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameElements/TileMap.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Ant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameElements/Spikes_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Idol.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sfx/soundimage/Hypnotic.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 
@@ -14,7 +16,7 @@
 
 [node name="TileMap" parent="." index="1" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -393179, 2, 0, -393178, 2, 0, -393177, 2, 0, -393176, 2, 0, -393175, 2, 0, -393174, 2, 0, -393173, 2, 0, -393172, 2, 0, -196580, 2, 0, -196579, 2, 0, -196578, 2, 0, -196577, 2, 0, -196576, 2, 0, -196575, 2, 0, -196574, 2, 0, -196573, 2, 0, -196572, 2, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 2, 0, 65558, 2, 0, 65559, 2, 0, 65560, 2, 0, 65561, 2, 0, 65562, 2, 0, 65563, 2, 0, 327673, 2, 0, 327674, 2, 0, 327675, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0 )
+tile_data = PoolIntArray( -1114041, 2, 0, -1114040, 2, 0, -1114039, 2, 0, -1114038, 2, 0, -1114037, 2, 0, -1114036, 2, 0, -1048506, 2, 0, -917443, 2, 0, -917442, 2, 0, -917441, 2, 0, -917440, 2, 0, -917439, 2, 0, -917438, 2, 0, -917437, 2, 0, -917436, 2, 0, -917435, 2, 0, -786379, 2, 0, -786378, 2, 0, -786377, 2, 0, -786376, 2, 0, -786375, 2, 0, -786374, 2, 0, -786373, 2, 0, -786372, 2, 0, -589779, 2, 0, -589778, 2, 0, -589777, 2, 0, -589776, 2, 0, -589775, 2, 0, -589774, 2, 0, -589773, 2, 0, -589772, 2, 0, -589771, 2, 0, -393179, 2, 0, -393178, 2, 0, -393177, 2, 0, -393176, 2, 0, -393175, 2, 0, -393174, 2, 0, -393173, 2, 0, -393172, 2, 0, -196580, 2, 0, -196579, 2, 0, -196578, 2, 0, -196577, 2, 0, -196576, 2, 0, -196575, 2, 0, -196574, 2, 0, -196573, 2, 0, -196572, 2, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 2, 0, 65558, 2, 0, 65559, 2, 0, 65560, 2, 0, 65561, 2, 0, 65562, 2, 0, 65563, 2, 0, 327673, 2, 0, 327674, 2, 0, 327675, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0 )
 
 [node name="Portal" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -40,6 +42,7 @@ count = 5
 
 position = Vector2( 454, 17 )
 required_cave_men = 10
+current_level = 7
 tutorial_file = "res://Levels/Tutorial_7.txt"
 
 [node name="Ant2" parent="." index="7" instance=ExtResource( 6 )]
@@ -57,9 +60,35 @@ speed = -80
 position = Vector2( 2855, -420 )
 speed = -80
 
-[node name="Spikes" parent="." index="10" instance=ExtResource( 7 )]
+[node name="Ant6" parent="." index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 3323, -614 )
+speed = -80
+
+[node name="Ant7" parent="." index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 3835, -810 )
+speed = -80
+
+[node name="Ant8" parent="." index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 4375, -937 )
+speed = -80
+
+[node name="Ant9" parent="." index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 4837, -1133 )
+speed = -80
+
+[node name="Spikes" parent="." index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 450, 161 )
+
+[node name="Idol" parent="." index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 1885, -215 )
+
+[node name="Hypnotic" parent="." index="16" instance=ExtResource( 9 )]
 
 [connection signal="cave_man_saved" from="Portal" to="Player/UI" method="_on_Portal_cave_man_saved"]
 

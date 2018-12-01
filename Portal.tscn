@@ -44,7 +44,7 @@ scale = Vector2( 3.59375, 3.59375 )
 z_index = -2
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
+frame = 3
 playing = true
 _sections_unfolded = [ "Z Index" ]
 
@@ -57,7 +57,7 @@ _sections_unfolded = [ "Z Index" ]
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
 
 stream = ExtResource( 9 )
-volume_db = 0.0
+volume_db = 3.59
 pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=141 format=2]
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Player_Idle/0030.png" type="Texture" id=2]
@@ -25,115 +25,119 @@
 [ext_resource path="res://Characters/Player_Shoot/0179.png" type="Texture" id=23]
 [ext_resource path="res://Characters/Player_Shoot/0180.png" type="Texture" id=24]
 [ext_resource path="res://Characters/Player_Shoot/0181.png" type="Texture" id=25]
-[ext_resource path="res://Characters/Player_Jump/0200.png" type="Texture" id=26]
-[ext_resource path="res://Characters/Player_Jump/0201.png" type="Texture" id=27]
-[ext_resource path="res://Characters/Player_Jump/0202.png" type="Texture" id=28]
-[ext_resource path="res://Characters/Player_Jump/0203.png" type="Texture" id=29]
-[ext_resource path="res://Characters/Player_Jump/0204.png" type="Texture" id=30]
-[ext_resource path="res://Characters/Player_Bored/0060.png" type="Texture" id=31]
-[ext_resource path="res://Characters/Player_Bored/0061.png" type="Texture" id=32]
-[ext_resource path="res://Characters/Player_Bored/0062.png" type="Texture" id=33]
-[ext_resource path="res://Characters/Player_Bored/0063.png" type="Texture" id=34]
-[ext_resource path="res://Characters/Player_Bored/0064.png" type="Texture" id=35]
-[ext_resource path="res://Characters/Player_Bored/0065.png" type="Texture" id=36]
-[ext_resource path="res://Characters/Player_Bored/0066.png" type="Texture" id=37]
-[ext_resource path="res://Characters/Player_Bored/0067.png" type="Texture" id=38]
-[ext_resource path="res://Characters/Player_Bored/0068.png" type="Texture" id=39]
-[ext_resource path="res://Characters/Player_Bored/0069.png" type="Texture" id=40]
-[ext_resource path="res://Characters/Player_Bored/0070.png" type="Texture" id=41]
-[ext_resource path="res://Characters/Player_Bored/0071.png" type="Texture" id=42]
-[ext_resource path="res://Characters/Player_Bored/0072.png" type="Texture" id=43]
-[ext_resource path="res://Characters/Player_Bored/0073.png" type="Texture" id=44]
-[ext_resource path="res://Characters/Player_Bored/0074.png" type="Texture" id=45]
-[ext_resource path="res://Characters/Player_Bored/0075.png" type="Texture" id=46]
-[ext_resource path="res://Characters/Player_Bored/0076.png" type="Texture" id=47]
-[ext_resource path="res://Characters/Player_Bored/0077.png" type="Texture" id=48]
-[ext_resource path="res://Characters/Player_Bored/0078.png" type="Texture" id=49]
-[ext_resource path="res://Characters/Player_Bored/0079.png" type="Texture" id=50]
-[ext_resource path="res://Characters/Player_Bored/0080.png" type="Texture" id=51]
-[ext_resource path="res://Characters/Player_Bored/0081.png" type="Texture" id=52]
-[ext_resource path="res://Characters/Player_Bored/0082.png" type="Texture" id=53]
-[ext_resource path="res://Characters/Player_Bored/0083.png" type="Texture" id=54]
-[ext_resource path="res://Characters/Player_Bored/0084.png" type="Texture" id=55]
-[ext_resource path="res://Characters/Player_Bored/0085.png" type="Texture" id=56]
-[ext_resource path="res://Characters/Player_Bored/0086.png" type="Texture" id=57]
-[ext_resource path="res://Characters/Player_Bored/0087.png" type="Texture" id=58]
-[ext_resource path="res://Characters/Player_Bored/0088.png" type="Texture" id=59]
-[ext_resource path="res://Characters/Player_Bored/0089.png" type="Texture" id=60]
-[ext_resource path="res://Characters/Player_Bored/0090.png" type="Texture" id=61]
-[ext_resource path="res://Characters/Player_Bored/0091.png" type="Texture" id=62]
-[ext_resource path="res://Characters/Player_Bored/0092.png" type="Texture" id=63]
-[ext_resource path="res://Characters/Player_Bored/0093.png" type="Texture" id=64]
-[ext_resource path="res://Characters/Player_Bored/0094.png" type="Texture" id=65]
-[ext_resource path="res://Characters/Player_Bored/0095.png" type="Texture" id=66]
-[ext_resource path="res://Characters/Player_Bored/0096.png" type="Texture" id=67]
-[ext_resource path="res://Characters/Player_Bored/0097.png" type="Texture" id=68]
-[ext_resource path="res://Characters/Player_Bored/0098.png" type="Texture" id=69]
-[ext_resource path="res://Characters/Player_Bored/0099.png" type="Texture" id=70]
-[ext_resource path="res://Characters/Player_Bored/0100.png" type="Texture" id=71]
-[ext_resource path="res://Characters/Player_Bored/0101.png" type="Texture" id=72]
-[ext_resource path="res://Characters/Player_Bored/0102.png" type="Texture" id=73]
-[ext_resource path="res://Characters/Player_Bored/0103.png" type="Texture" id=74]
-[ext_resource path="res://Characters/Player_Bored/0104.png" type="Texture" id=75]
-[ext_resource path="res://Characters/Player_Bored/0105.png" type="Texture" id=76]
-[ext_resource path="res://Characters/Player_Bored/0106.png" type="Texture" id=77]
-[ext_resource path="res://Characters/Player_Bored/0107.png" type="Texture" id=78]
-[ext_resource path="res://Characters/Player_Bored/0108.png" type="Texture" id=79]
-[ext_resource path="res://Characters/Player_Bored/0109.png" type="Texture" id=80]
-[ext_resource path="res://Characters/Player_Bored/0110.png" type="Texture" id=81]
-[ext_resource path="res://Characters/Player_Bored/0111.png" type="Texture" id=82]
-[ext_resource path="res://Characters/Player_Bored/0112.png" type="Texture" id=83]
-[ext_resource path="res://Characters/Player_Bored/0113.png" type="Texture" id=84]
-[ext_resource path="res://Characters/Player_Bored/0114.png" type="Texture" id=85]
-[ext_resource path="res://Characters/Player_Bored/0115.png" type="Texture" id=86]
-[ext_resource path="res://Characters/Player_Bored/0116.png" type="Texture" id=87]
-[ext_resource path="res://Characters/Player_Bored/0117.png" type="Texture" id=88]
-[ext_resource path="res://Characters/Player_Bored/0118.png" type="Texture" id=89]
-[ext_resource path="res://Characters/Player_Bored/0119.png" type="Texture" id=90]
-[ext_resource path="res://Characters/Player_Bored/0120.png" type="Texture" id=91]
-[ext_resource path="res://Characters/Player_Bored/0121.png" type="Texture" id=92]
-[ext_resource path="res://Characters/Player_Bored/0122.png" type="Texture" id=93]
-[ext_resource path="res://Characters/Player_Bored/0123.png" type="Texture" id=94]
-[ext_resource path="res://Characters/Player_Bored/0124.png" type="Texture" id=95]
-[ext_resource path="res://Characters/Player_Bored/0125.png" type="Texture" id=96]
-[ext_resource path="res://Characters/Player_Bored/0126.png" type="Texture" id=97]
-[ext_resource path="res://Characters/Player_Bored/0127.png" type="Texture" id=98]
-[ext_resource path="res://Characters/Player_Bored/0128.png" type="Texture" id=99]
-[ext_resource path="res://Characters/Player_Bored/0129.png" type="Texture" id=100]
-[ext_resource path="res://Characters/Player_Bored/0130.png" type="Texture" id=101]
-[ext_resource path="res://Characters/Player_Bored/0131.png" type="Texture" id=102]
-[ext_resource path="res://Characters/Player_Bored/0132.png" type="Texture" id=103]
-[ext_resource path="res://Characters/Player_Bored/0133.png" type="Texture" id=104]
-[ext_resource path="res://Characters/Player_Bored/0134.png" type="Texture" id=105]
-[ext_resource path="res://Characters/Player_Bored/0135.png" type="Texture" id=106]
-[ext_resource path="res://Characters/Player_Bored/0136.png" type="Texture" id=107]
-[ext_resource path="res://Characters/Player_Bored/0137.png" type="Texture" id=108]
-[ext_resource path="res://Characters/Player_Bored/0138.png" type="Texture" id=109]
-[ext_resource path="res://Characters/Player_Bored/0139.png" type="Texture" id=110]
-[ext_resource path="res://Characters/Player_Bored/0140.png" type="Texture" id=111]
-[ext_resource path="res://Characters/Player_Bored/0141.png" type="Texture" id=112]
-[ext_resource path="res://Characters/Player_Bored/0142.png" type="Texture" id=113]
-[ext_resource path="res://Characters/Player_Bored/0143.png" type="Texture" id=114]
-[ext_resource path="res://Characters/Player_Bored/0144.png" type="Texture" id=115]
-[ext_resource path="res://Characters/Player_Bored/0145.png" type="Texture" id=116]
-[ext_resource path="res://Characters/Player_Bored/0146.png" type="Texture" id=117]
-[ext_resource path="res://Characters/Player_Bored/0147.png" type="Texture" id=118]
-[ext_resource path="res://Characters/Player_Bored/0148.png" type="Texture" id=119]
-[ext_resource path="res://Characters/Player_Walk/0001.png" type="Texture" id=120]
-[ext_resource path="res://Characters/Player_Walk/0002.png" type="Texture" id=121]
-[ext_resource path="res://Characters/Player_Walk/0003.png" type="Texture" id=122]
-[ext_resource path="res://Characters/Player_Walk/0004.png" type="Texture" id=123]
-[ext_resource path="res://Characters/Player_Walk/0005.png" type="Texture" id=124]
-[ext_resource path="res://Characters/Player_Walk/0006.png" type="Texture" id=125]
-[ext_resource path="res://Characters/Player_Walk/0007.png" type="Texture" id=126]
-[ext_resource path="res://Characters/Player_Walk/0008.png" type="Texture" id=127]
-[ext_resource path="res://Characters/Player_Walk/0009.png" type="Texture" id=128]
-[ext_resource path="res://Characters/Player_Walk/0010.png" type="Texture" id=129]
-[ext_resource path="res://Characters/Player_Walk/0011.png" type="Texture" id=130]
-[ext_resource path="res://Characters/Player_Walk/0012.png" type="Texture" id=131]
-[ext_resource path="res://Characters/Player_Walk/0013.png" type="Texture" id=132]
+[ext_resource path="res://Characters/Player_Bored/0060.png" type="Texture" id=26]
+[ext_resource path="res://Characters/Player_Bored/0061.png" type="Texture" id=27]
+[ext_resource path="res://Characters/Player_Bored/0062.png" type="Texture" id=28]
+[ext_resource path="res://Characters/Player_Bored/0063.png" type="Texture" id=29]
+[ext_resource path="res://Characters/Player_Bored/0064.png" type="Texture" id=30]
+[ext_resource path="res://Characters/Player_Bored/0065.png" type="Texture" id=31]
+[ext_resource path="res://Characters/Player_Bored/0066.png" type="Texture" id=32]
+[ext_resource path="res://Characters/Player_Bored/0067.png" type="Texture" id=33]
+[ext_resource path="res://Characters/Player_Bored/0068.png" type="Texture" id=34]
+[ext_resource path="res://Characters/Player_Bored/0069.png" type="Texture" id=35]
+[ext_resource path="res://Characters/Player_Bored/0070.png" type="Texture" id=36]
+[ext_resource path="res://Characters/Player_Bored/0071.png" type="Texture" id=37]
+[ext_resource path="res://Characters/Player_Bored/0072.png" type="Texture" id=38]
+[ext_resource path="res://Characters/Player_Bored/0073.png" type="Texture" id=39]
+[ext_resource path="res://Characters/Player_Bored/0074.png" type="Texture" id=40]
+[ext_resource path="res://Characters/Player_Bored/0075.png" type="Texture" id=41]
+[ext_resource path="res://Characters/Player_Bored/0076.png" type="Texture" id=42]
+[ext_resource path="res://Characters/Player_Bored/0077.png" type="Texture" id=43]
+[ext_resource path="res://Characters/Player_Bored/0078.png" type="Texture" id=44]
+[ext_resource path="res://Characters/Player_Bored/0079.png" type="Texture" id=45]
+[ext_resource path="res://Characters/Player_Bored/0080.png" type="Texture" id=46]
+[ext_resource path="res://Characters/Player_Bored/0081.png" type="Texture" id=47]
+[ext_resource path="res://Characters/Player_Bored/0082.png" type="Texture" id=48]
+[ext_resource path="res://Characters/Player_Bored/0083.png" type="Texture" id=49]
+[ext_resource path="res://Characters/Player_Bored/0084.png" type="Texture" id=50]
+[ext_resource path="res://Characters/Player_Bored/0085.png" type="Texture" id=51]
+[ext_resource path="res://Characters/Player_Bored/0086.png" type="Texture" id=52]
+[ext_resource path="res://Characters/Player_Bored/0087.png" type="Texture" id=53]
+[ext_resource path="res://Characters/Player_Bored/0088.png" type="Texture" id=54]
+[ext_resource path="res://Characters/Player_Bored/0089.png" type="Texture" id=55]
+[ext_resource path="res://Characters/Player_Bored/0090.png" type="Texture" id=56]
+[ext_resource path="res://Characters/Player_Bored/0091.png" type="Texture" id=57]
+[ext_resource path="res://Characters/Player_Bored/0092.png" type="Texture" id=58]
+[ext_resource path="res://Characters/Player_Bored/0093.png" type="Texture" id=59]
+[ext_resource path="res://Characters/Player_Bored/0094.png" type="Texture" id=60]
+[ext_resource path="res://Characters/Player_Bored/0095.png" type="Texture" id=61]
+[ext_resource path="res://Characters/Player_Bored/0096.png" type="Texture" id=62]
+[ext_resource path="res://Characters/Player_Bored/0097.png" type="Texture" id=63]
+[ext_resource path="res://Characters/Player_Bored/0098.png" type="Texture" id=64]
+[ext_resource path="res://Characters/Player_Bored/0099.png" type="Texture" id=65]
+[ext_resource path="res://Characters/Player_Bored/0100.png" type="Texture" id=66]
+[ext_resource path="res://Characters/Player_Bored/0101.png" type="Texture" id=67]
+[ext_resource path="res://Characters/Player_Bored/0102.png" type="Texture" id=68]
+[ext_resource path="res://Characters/Player_Bored/0103.png" type="Texture" id=69]
+[ext_resource path="res://Characters/Player_Bored/0104.png" type="Texture" id=70]
+[ext_resource path="res://Characters/Player_Bored/0105.png" type="Texture" id=71]
+[ext_resource path="res://Characters/Player_Bored/0106.png" type="Texture" id=72]
+[ext_resource path="res://Characters/Player_Bored/0107.png" type="Texture" id=73]
+[ext_resource path="res://Characters/Player_Bored/0108.png" type="Texture" id=74]
+[ext_resource path="res://Characters/Player_Bored/0109.png" type="Texture" id=75]
+[ext_resource path="res://Characters/Player_Bored/0110.png" type="Texture" id=76]
+[ext_resource path="res://Characters/Player_Bored/0111.png" type="Texture" id=77]
+[ext_resource path="res://Characters/Player_Bored/0112.png" type="Texture" id=78]
+[ext_resource path="res://Characters/Player_Bored/0113.png" type="Texture" id=79]
+[ext_resource path="res://Characters/Player_Bored/0114.png" type="Texture" id=80]
+[ext_resource path="res://Characters/Player_Bored/0115.png" type="Texture" id=81]
+[ext_resource path="res://Characters/Player_Bored/0116.png" type="Texture" id=82]
+[ext_resource path="res://Characters/Player_Bored/0117.png" type="Texture" id=83]
+[ext_resource path="res://Characters/Player_Bored/0118.png" type="Texture" id=84]
+[ext_resource path="res://Characters/Player_Bored/0119.png" type="Texture" id=85]
+[ext_resource path="res://Characters/Player_Bored/0120.png" type="Texture" id=86]
+[ext_resource path="res://Characters/Player_Bored/0121.png" type="Texture" id=87]
+[ext_resource path="res://Characters/Player_Bored/0122.png" type="Texture" id=88]
+[ext_resource path="res://Characters/Player_Bored/0123.png" type="Texture" id=89]
+[ext_resource path="res://Characters/Player_Bored/0124.png" type="Texture" id=90]
+[ext_resource path="res://Characters/Player_Bored/0125.png" type="Texture" id=91]
+[ext_resource path="res://Characters/Player_Bored/0126.png" type="Texture" id=92]
+[ext_resource path="res://Characters/Player_Bored/0127.png" type="Texture" id=93]
+[ext_resource path="res://Characters/Player_Bored/0128.png" type="Texture" id=94]
+[ext_resource path="res://Characters/Player_Bored/0129.png" type="Texture" id=95]
+[ext_resource path="res://Characters/Player_Bored/0130.png" type="Texture" id=96]
+[ext_resource path="res://Characters/Player_Bored/0131.png" type="Texture" id=97]
+[ext_resource path="res://Characters/Player_Bored/0132.png" type="Texture" id=98]
+[ext_resource path="res://Characters/Player_Bored/0133.png" type="Texture" id=99]
+[ext_resource path="res://Characters/Player_Bored/0134.png" type="Texture" id=100]
+[ext_resource path="res://Characters/Player_Bored/0135.png" type="Texture" id=101]
+[ext_resource path="res://Characters/Player_Bored/0136.png" type="Texture" id=102]
+[ext_resource path="res://Characters/Player_Bored/0137.png" type="Texture" id=103]
+[ext_resource path="res://Characters/Player_Bored/0138.png" type="Texture" id=104]
+[ext_resource path="res://Characters/Player_Bored/0139.png" type="Texture" id=105]
+[ext_resource path="res://Characters/Player_Bored/0140.png" type="Texture" id=106]
+[ext_resource path="res://Characters/Player_Bored/0141.png" type="Texture" id=107]
+[ext_resource path="res://Characters/Player_Bored/0142.png" type="Texture" id=108]
+[ext_resource path="res://Characters/Player_Bored/0143.png" type="Texture" id=109]
+[ext_resource path="res://Characters/Player_Bored/0144.png" type="Texture" id=110]
+[ext_resource path="res://Characters/Player_Bored/0145.png" type="Texture" id=111]
+[ext_resource path="res://Characters/Player_Bored/0146.png" type="Texture" id=112]
+[ext_resource path="res://Characters/Player_Bored/0147.png" type="Texture" id=113]
+[ext_resource path="res://Characters/Player_Bored/0148.png" type="Texture" id=114]
+[ext_resource path="res://Characters/Player_Walk/0001.png" type="Texture" id=115]
+[ext_resource path="res://Characters/Player_Walk/0002.png" type="Texture" id=116]
+[ext_resource path="res://Characters/Player_Walk/0003.png" type="Texture" id=117]
+[ext_resource path="res://Characters/Player_Walk/0004.png" type="Texture" id=118]
+[ext_resource path="res://Characters/Player_Walk/0005.png" type="Texture" id=119]
+[ext_resource path="res://Characters/Player_Walk/0006.png" type="Texture" id=120]
+[ext_resource path="res://Characters/Player_Walk/0007.png" type="Texture" id=121]
+[ext_resource path="res://Characters/Player_Walk/0008.png" type="Texture" id=122]
+[ext_resource path="res://Characters/Player_Walk/0009.png" type="Texture" id=123]
+[ext_resource path="res://Characters/Player_Walk/0010.png" type="Texture" id=124]
+[ext_resource path="res://Characters/Player_Walk/0011.png" type="Texture" id=125]
+[ext_resource path="res://Characters/Player_Walk/0012.png" type="Texture" id=126]
+[ext_resource path="res://Characters/Player_Walk/0013.png" type="Texture" id=127]
+[ext_resource path="res://Characters/Player_Jump/0200.png" type="Texture" id=128]
+[ext_resource path="res://Characters/Player_Jump/0201.png" type="Texture" id=129]
+[ext_resource path="res://Characters/Player_Jump/0202.png" type="Texture" id=130]
+[ext_resource path="res://Characters/Player_Jump/0203.png" type="Texture" id=131]
+[ext_resource path="res://Characters/Player_Jump/0204.png" type="Texture" id=132]
 [ext_resource path="res://GameElements/UI.tscn" type="PackedScene" id=133]
 [ext_resource path="res://sfx/run.ogg" type="AudioStream" id=134]
+[ext_resource path="res://assets/Lightning.tscn" type="PackedScene" id=135]
+[ext_resource path="res://sfx/lightning.ogg" type="AudioStream" id=136]
+[ext_resource path="res://sfx/lightning_loud.ogg" type="AudioStream" id=137]
+[ext_resource path="res://sfx/land.ogg" type="AudioStream" id=138]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -154,19 +158,19 @@ animations = [ {
 "name": "shoot",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": false,
-"name": "jump",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ) ],
 "loop": false,
 "name": "bored",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ) ],
+"frames": [ ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ) ],
 "loop": true,
 "name": "walk",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ) ],
+"loop": false,
+"name": "jump",
 "speed": 24.0
 } ]
 
@@ -182,7 +186,7 @@ _sections_unfolded = [ "Pause", "Transform", "collision" ]
 speed = 300
 gravitySpeed = 627.2
 required_cave_men = 5
-next_level = -1
+current_level = 0
 tutorial_file = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -229,6 +233,40 @@ animation = "idle"
 
 stream = ExtResource( 134 )
 volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Lightning" parent="." index="5" instance=ExtResource( 135 )]
+
+visible = false
+position = Vector2( 12.0367, -33.0923 )
+z_index = -1
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="lightning_sound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 136 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="lightning_loud_sound" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 137 )
+volume_db = -6.65
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="land_sound" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 138 )
+volume_db = -1.49
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

@@ -24,7 +24,13 @@ func _explode_cell(vec):
 		tile_set.set_cellv(vec, -1)
 		_explode_anim(tile_set.map_to_world(vec) + Vector2(32,32))
 
+var first = true
 func _process(delta):
+	# collision bodies aren't calculated yet
+	if(first):
+		first = false
+		return
+		
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	if(Input.is_action_pressed("player_trigger") and not dead):
@@ -45,4 +51,5 @@ func _process(delta):
 
 		get_parent().damage(1)
 		$particles.set_emitting(false)
+		$explode.play()
 		dead = true

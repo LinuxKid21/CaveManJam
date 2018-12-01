@@ -58,9 +58,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 65.4127, 28.5397 )
+extents = Vector2( 60, 28.5397 )
 
-[node name="Ant" type="KinematicBody2D"]
+[node name="Ant" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -74,7 +74,7 @@ gravitySpeed = 627.2
 
 frames = SubResource( 1 )
 animation = "walk"
-frame = 12
+frame = 23
 playing = true
 
 [node name="collision" type="CollisionShape2D" parent="." index="1"]

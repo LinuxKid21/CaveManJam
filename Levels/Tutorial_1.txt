@@ -1,4 +1,8 @@
-Press [Escape] any time to skip this text.
+Press [Escape] any time to skip a line of text.
 The game is simple.
 Cavemen come from the tree.
 You need to get them to the portal safely.
+The idol is an optional objective. It makes the cavemen happy!
+You only keep it if you won the level.
+Press [Escape] to view the menu and see controls.
+Good Luck and Have Fun!
