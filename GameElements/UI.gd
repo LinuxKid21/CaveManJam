@@ -24,24 +24,30 @@ func _ready():
 	tween.start()
 
 var time = 0
+var last_count = 0
 func _process(delta):
 	if(line_idx >= len(tutorial_lines)):
 		can_unpause = true
 		disp_ui.set_text("")
 	else:
 		var line = tutorial_lines[line_idx]
-		var letter_count = int(time * 50)
-		
+		var letter_count = int(time * 25)
 		var excess = 0
 		if(letter_count >= len(line)):
 			excess = letter_count - len(line)
 			letter_count = len(line)
+		
+		if(letter_count >= last_count + 3):
+			$click.play()
+			last_count = letter_count
+		
 		var display = line.substr(0,letter_count)
 		disp_ui.set_text(display)
 		
 		if(excess >= 100 or Input.is_action_just_pressed("escape")):
 			line_idx += 1
 			time = 0
+			last_count = 0
 	time += delta
 
 

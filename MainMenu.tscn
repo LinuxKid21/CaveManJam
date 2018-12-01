@@ -180,7 +180,7 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[node name="MainMenu" type="CanvasLayer" index="0"]
+[node name="MainMenu" type="CanvasLayer"]
 
 pause_mode = 2
 layer = 1
